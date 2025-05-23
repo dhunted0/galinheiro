@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="edit-container">
+        <div class="form-column">
+            <h1>Edit Game</h1>
+            {% if error %}
+                <div style="color: #ff5555; font-weight: bold; margin-bottom: 12px;">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <form method="POST" enctype="multipart/form-data">
+                <label for="name">Game Name:</label>
+                <input type="text" id="name" name="name" value="{{ form.name if form else game[1] }}" required>
+
+                <label for="genre">Genre:</label>
+                <input type="text" id="genre" name="genre" value="{{ form.genre if form else game[2] }}" required>
+
+                <label for="platform">Platform:</label>
+                <input type="text" id="platform" name="platform" value="{{ form.platform if form else game[3] }}" required>
+
+                <label for="interprise">Developer:</label>
+                <input type="text" id="interprise" name="interprise" value="{{ form.interprise if form else game[4] }}" required>
+
+                <label for="release_date">Release Date:</label>
+                <input type="date" id="release_date" name="release_date" value="{{ form.release_date if form else game[5] }}" required>
+
+                <div class="button-row">
+                    <button type="submit" class="btn">Save Changes</button>
+                    <a href="{{ url_for('index') }}" class="btn">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="cover-preview">
+            <label class="upload-overlay">
+                <img src="{{ url_for('static', filename='covers/' ~ game[0] ~ '.jpg') }}" alt="Cover Image">
+                <input type="file" name="cover" accept="image/jpeg">
+                <span class="upload-icon">📤</span>
+            </label>
+        </div>
+
+    </div>
+</body>
+</html>

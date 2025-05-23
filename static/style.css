@@ -1,0 +1,210 @@
+body {
+    background-color: #1b2838;
+    color: #c7d5e0;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 40px 0;
+}
+
+h1 {
+    text-align: center;
+    color: #66c0f4;
+}
+
+a {
+    color: #66c0f4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.game-card {
+    background-color: #2a3742;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.game-card:hover {
+    transform: scale(1.03);
+}
+
+.game-cover {
+    width: 100%;
+    aspect-ratio: 2/3;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.game-info {
+    padding: 10px;
+}
+
+.game-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.game-meta {
+    font-size: 0.85rem;
+    color: #c7d5e0;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(to bottom, #66c0f4, #2a475e);
+    border: 1px solid #00000055;
+    border-radius: 3px;
+    padding: 6px 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(to bottom, #417a9b, #1b2838);
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-space {
+    margin-bottom: 20px;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 40px auto;
+    background-color: #2a3742;
+    padding: 20px 24px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.form-container h1 {
+    color: #66c0f4;
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    padding-left: 2px;
+    font-size: 0.9rem;
+    color: #c7d5e0;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #1b2838;
+    color: #c7d5e0;
+    border: 1px solid #3b4c5a;
+    border-radius: 4px;
+    margin-top: 2px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus {
+    border: 1px solid #66c0f4;
+    outline: none;
+    box-shadow: 0 0 5px #66c0f4;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-container {
+    max-width: 800px;
+    margin: 40px auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.form-column {
+    flex: 1;
+    background-color: #2a3742;
+    padding: 24px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.cover-preview {
+    flex: 0 0 260px;
+    text-align: center;
+}
+
+.cover-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.cover-preview {
+    position: relative;
+    width: 260px;
+}
+
+.cover-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.upload-overlay {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.upload-overlay input[type="file"] {
+    display: none;
+}
+
+.upload-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(33, 52, 71, 0.8);
+    color: #66c0f4;
+    font-size: 18px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    pointer-events: none;
+}
